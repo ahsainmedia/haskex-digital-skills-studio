@@ -1,75 +1,120 @@
 <!DOCTYPE html>
 <html lang="en">
 <head>
-  <meta charset="UTF-8" />
+  <meta charset="UTF-8">
   <title>HaskeX Digital Skills Studio</title>
-  <link rel="stylesheet" href="style.css" />
+
+  <!-- Font Awesome Icons -->
+  <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.5.0/css/all.min.css">
+
+  <link rel="stylesheet" href="style.css">
 </head>
 <body>
 
-<header>
+<header class="hero">
   <h1>HaskeX Digital Skills Studio</h1>
-  <p>Empowering Digital & Technical Skills for the Next Generation</p>
+  <p>
+    A student-led digital and technical learning initiative focused on building
+    practical skills through structured projects and innovation.
+  </p>
 </header>
 
 <nav>
-  <a href="#home">Home</a>
+  <a href="#mission">Mission</a>
   <a href="#teach">What We Teach</a>
   <a href="#projects">Projects</a>
   <a href="#about">About</a>
 </nav>
 
-<section id="home">
-  <h2>Our Mission</h2>
+<section id="mission">
+  <h2><i class="fa-solid fa-bullseye"></i> Our Mission</h2>
   <p>
-    HaskeX Digital Skills Studio is a student-led initiative focused on building
-    practical digital, creative, and technical skills through structured,
-    project-based learning.
+    HaskeX Digital Skills Studio is designed to support students and young learners
+    in acquiring relevant digital, creative, and technical skills through guided,
+    hands-on learning. The initiative emphasizes discipline, practical application,
+    and continuous improvement.
   </p>
 </section>
 
 <section id="teach">
-  <h2>What We Teach</h2>
+  <h2><i class="fa-solid fa-graduation-cap"></i> What We Teach</h2>
 
-  <h3>Digital & Creative Skills</h3>
-  <ul>
-    <li>Graphic Design Fundamentals</li>
-    <li>Video Editing & Content Production</li>
-    <li>Creative Tools for Digital Media</li>
-  </ul>
+  <div class="tabs">
+    <button class="tab-btn active" onclick="openTab('digital')">Digital & Creative</button>
+    <button class="tab-btn" onclick="openTab('technical')">Technical & Engineering</button>
+    <button class="tab-btn" onclick="openTab('productivity')">Productivity</button>
+  </div>
 
-  <h3>Technical & Engineering Skills</h3>
-  <ul>
-    <li>Programming Fundamentals</li>
-    <li>Introductory Embedded Systems & IoT</li>
-    <li>Engineering Study Support</li>
-  </ul>
+  <div id="digital" class="tab-content active">
+    <ul>
+      <li><i class="fa-solid fa-palette"></i> Graphic Design Fundamentals</li>
+      <li><i class="fa-solid fa-video"></i> Video Editing & Media Production</li>
+      <li><i class="fa-solid fa-pen-nib"></i> Digital Content Creation Tools</li>
+    </ul>
+  </div>
+
+  <div id="technical" class="tab-content">
+    <ul>
+      <li><i class="fa-solid fa-code"></i> Programming Fundamentals</li>
+      <li><i class="fa-solid fa-microchip"></i> Introductory Embedded Systems & IoT</li>
+      <li><i class="fa-solid fa-book"></i> Engineering Study Support</li>
+    </ul>
+  </div>
+
+  <div id="productivity" class="tab-content">
+    <ul>
+      <li><i class="fa-solid fa-list-check"></i> Project-Based Learning</li>
+      <li><i class="fa-solid fa-file-lines"></i> Technical Documentation Skills</li>
+      <li><i class="fa-solid fa-clock"></i> Time & Skill Management</li>
+    </ul>
+  </div>
 </section>
 
 <section id="projects">
-  <h2>Projects</h2>
+  <h2><i class="fa-solid fa-diagram-project"></i> Projects</h2>
 
-  <p><strong>Digital Skills Learning Hub</strong><br>
-  Status: Prototype / In Development</p>
+  <div class="card">
+    <h3>Digital Skills Learning Hub</h3>
+    <p>
+      A prototype learning platform designed to organize digital and technical skills
+      into structured modules with progress tracking.
+    </p>
+    <span class="status">Status: Prototype / In Development</span>
+  </div>
 
-  <p><strong>Educational Website & Learning Resources</strong><br>
-  Status: Active</p>
-
+  <div class="card">
+    <h3>Educational Website & Learning Resources</h3>
+    <p>
+      A static educational platform providing foundational resources and project
+      documentation for learning digital and engineering skills.
+    </p>
+    <span class="status">Status: Active</span>
+  </div>
 </section>
 
 <section id="about">
-  <h2>About</h2>
+  <h2><i class="fa-solid fa-user"></i> About</h2>
   <p>
-    Ahmad Hussaini Ahmad is an Electrical Engineering student with an interest in
-    digital skills, engineering education, media technology, and innovation.
-    HaskeX Digital Skills Studio was created to support practical learning and
-    student development.
+    Ahmad Hussaini Ahmad is an Electrical Engineering student with strong interest in
+    digital skills, engineering education, and media technology. He is committed to
+    building practical learning platforms that support skill development through
+    real-world projects and discipline-driven growth.
   </p>
 </section>
 
 <footer>
   <p>© 2025 HaskeX Digital Skills Studio</p>
 </footer>
+
+<script>
+function openTab(tabId) {
+  document.querySelectorAll('.tab-content').forEach(tab => tab.classList.remove('active'));
+  document.querySelectorAll('.tab-btn').forEach(btn => btn.classList.remove('active'));
+
+  document.getElementById(tabId).classList.add('active');
+  event.target.classList.add('active');
+}
+</script>
 
 </body>
 </html>
